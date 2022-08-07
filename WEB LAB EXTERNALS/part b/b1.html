@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="inp"> -->
+    <button onclick="myfun()">Test</button>
+    <script>
+         function myfun()
+         {
+            let x=new Map();
+            console.log("Add items to map");
+
+            console.time("Adding items to map");
+            x.set("name","Patty");
+            x.set("usn","058");
+            x.set("dept","Ise");
+            console.timeEnd("Adding items to map");
+
+            console.log("Delete usn from map");
+            console.time("Deleting items from map:");
+            x.delete("usn");
+            console.timeEnd("Deleting items from map:");
+
+            
+            console.log("\n\n");
+
+            let obj=new Object();
+
+            console.log("Add items to object");
+            console.time("Adding items to object");
+            obj.name="patty";
+            obj.usn="059";
+            obj.dept="ISE";
+            console.timeEnd("Adding items to object");
+
+            console.log("Deleting usn from object");
+            console.time("Deleting item from object");
+            delete obj.usn;
+            console.timeEnd("Deleting item from object");
+         }
+    </script>
+</body>
+</html>

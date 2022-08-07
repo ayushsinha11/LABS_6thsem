@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="num1">
+    <br>
+    <input type="number" id="num2">
+    <br>
+    <select name="" id="op">
+        <option value="+">Add</option>
+        <option value="-">Subtract</option>
+        <option value="*">Multiply</option>
+        <option value="/">Divide</option>
+    </select>
+    <button onclick="my()">Calculate</button>
+    <br>
+    <br>
+    <button onclick="myf()">Show</button>
+    <br>
+    <div id="ans"></div>
+
+    <script>
+        let p;
+        // let btn1 = document.querySelector("[id='btn1']");
+        // btn1.addEventListener("click", my);
+
+        // let btn2 = document.querySelector("[id='btn2']");
+        // btn2.addEventListener("click", myf);
+
+        function my() {
+            let a = parseInt(document.getElementById("num1").value);
+            let b = parseInt(document.getElementById("num2").value);
+            let op = document.getElementById("op").value;
+
+            switch (op) {
+                case '+':
+                    p = new Promise(function(resolve, reject) {
+                        setTimeout(() => {
+                            resolve(a + b);
+                        }, 2000);
+                    });
+                    break;
+
+                case '-':
+                    p = new Promise(function(resolve, reject) {
+                        setTimeout(() => {
+                            resolve(a - b);
+                        }, 2000);
+                    });
+                    break;
+
+                case '*':
+                    p = new Promise(function(resolve, reject) {
+                        setTimeout(() => {
+                            resolve(a * b);
+                        }, 2000);
+                    });
+                    break;
+
+                case '/':
+                    p = new Promise(function(resolve, reject) {
+                        setTimeout(() => {
+                            resolve(a / b);
+                        }, 2000);
+                    });
+                    break;
+            }
+        }
+
+        async function myf() {
+            let ans = await p;
+            let a1 = document.getElementById("ans");
+            a1.innerHTML = ans;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let fun = (n) => {
+
+            let sum = 0;
+            while (n != 0) {
+                let p = n % 10;
+                sum = sum * 10 + p;
+                n = parseInt(n / 10);
+            }
+
+            return sum;
+        }
+
+        let x = prompt("Enter the number you want to reverse:");
+        alert(fun(x));
+    </script>
+</body>
+
+</html>

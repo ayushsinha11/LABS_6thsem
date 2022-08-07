@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp1">
+    <br>
+    <button onclick="my()">Test</button>
+    <div id="ans"></div>
+
+    <script>
+        function my() {
+            let x = document.getElementById("inp1").value;
+
+            if (x.toUpperCase() == x)
+                x = x.toLowerCase();
+
+            else
+                x = x.toUpperCase();
+
+            document.getElementById("ans").innerHTML = x;
+        }
+    </script>
+
+</body>
+
+</html>

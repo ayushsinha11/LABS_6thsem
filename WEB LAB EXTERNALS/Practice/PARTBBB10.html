@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fun()">Reset</button>
+    <div id="ans"></div>
+    <script>
+        let c=document.getElementById("ans");
+        let v=localStorage.getItem("P");
+
+        if(v){
+            v=Number(v)+1;
+            localStorage.setItem("P",v);
+        }
+        else{
+            v=1;
+            localStorage.setItem("P",1);
+        }
+        c.innerHTML=v;
+        function fun(){
+            v=1;
+            localStorage.setItem("P",1);
+            c.innerHTML=v;
+        }
+    </script>
+    
+</body>
+</html>

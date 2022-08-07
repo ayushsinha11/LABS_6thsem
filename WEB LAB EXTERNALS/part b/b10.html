@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    website visitor count:
+    <button onclick="myfun()">Reset</button>
+    <div id="ans"></div>
+
+    <script>
+        let c=document.getElementById("ans");
+        let v=localStorage.getItem("p");
+
+        if(v)
+        {
+            v=Number(v)+1;
+            localStorage.setItem("p",v);
+        }
+
+        else
+        {
+            v=1;
+            localStorage.setItem("p",1);
+        }
+
+        c.innerHTML=v;
+
+        function myfun()
+        {
+            v=1;
+            localStorage.setItem("p",1);
+            c.innerHTML=v;
+        }
+    </script>
+</body>
+</html>

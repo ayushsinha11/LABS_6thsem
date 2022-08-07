@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp1">
+    <br>
+    <button onclick="add()">Add</button>
+    <br>
+    <button onclick="show()">Show</button>
+    <br>
+    <input type="text" id="key">
+    <br>
+    <button onclick="searc()">Search</button>
+    <br>
+    <div id="ans"></div>
+
+    <script>
+        var a=[];
+        var i=0;
+
+        function add()
+        {
+            a[i++]=document.getElementById("inp1").value;
+        }
+
+        function show()
+        {
+            let s="";
+            let j=0;
+            for(j=0;j<i;j++)
+            {
+                s+=a[j]+"<br>";
+            }
+            document.getElementById("ans").innerHTML=s;
+        }
+
+        function searc()
+        {
+            a.sort(function(a,b)
+            {
+                return a-b;
+            });
+
+            var key=document.getElementById("key").value;
+            var size=i;
+            var start=0;
+            var end=Math.sqrt(size);
+
+            while(a[end]<=key && end<size)
+            {
+                start=end;
+                end+=Math.sqrt(size);
+                if(end>size-1)
+                end=size;
+            }
+
+            let ans=-1;
+
+            for(var k=start;k<=end;k++)
+            {
+                if(a[k]==key)
+                   ans=k;
+            }
+
+            document.getElementById("ans").innerHTML=ans;
+        }
+
+    </script>
+</body>
+</html>

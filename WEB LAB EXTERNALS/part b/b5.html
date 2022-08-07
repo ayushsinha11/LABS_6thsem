@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bookflight(str1)
+        {
+            return new Promise(function(resolve,reject)
+            {
+                let pattern="book-flight";
+                let ans=str1.match(pattern);
+                if(ans)
+                   resolve("Your flight is Booked!");
+                else
+                   reject("Your flight is NOT Booked!");
+            })
+        }
+
+        function bookhotel(str)
+        {
+            return new Promise(function(resolve,reject)
+            {
+                let pattern="book-hotel";
+                let ans=str.match(pattern);
+                if(ans)
+                   resolve("Your Hotel is Booked!");
+                else
+                   reject("Your hotel is NOT Booked!");
+            })
+        }
+
+        let a=prompt("To book a flight enter: 'book-flight'");
+        bookflight(a).then(
+            function(msg)
+            {
+                alert(msg);
+                let b=prompt("To book a hotel enter: 'book-hotel'");
+                bookhotel(b).then(
+                    function(msg)
+                    {
+                        alert(msg);
+                    }
+                ).catch(
+                    function(error)
+                    {
+                        alert(error);
+                    }
+                )
+            }
+        ).catch(
+            function(error)
+            {
+               alert(error);
+            }
+        )
+
+    </script>
+</body>
+</html>

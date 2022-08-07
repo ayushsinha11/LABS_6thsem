@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button onclick="fun()">Submit</button>
+    <div id="ans"></div>
+    <script>
+        let fun=()=>{
+            let x=document.getElementById("inp").value;
+            let myPromise=new Promise(function(resolve,reject){
+                let y="paris";
+                if(x==y){
+                    resolve("Let's take a trip to paris");
+                }
+                else{
+                    reject("Invalid location");
+                }
+            }).then(
+                function(value){document.getElementById("ans").innerHTML=value},
+                function(error){document.getElementById("ans").innerHTML=error}
+                );
+
+        }
+    </script>
+    
+</body>
+</html>

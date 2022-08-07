@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the number 1" value="" id="val1" >
+    <input type="number" placeholder="Enter the number 2" value="" id="val2" >
+    <button onclick="myfunc()">Submit</button>
+
+    <script>
+        const myfunc=()=>{
+
+            var a = parseInt(document.getElementById('val1').value);
+            var b = parseInt(document.getElementById('val2').value);
+
+            const func=(key)=>{
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+
+                        switch (key) {
+                            case '+':resolve(a+b)
+                                break;
+                            case '-':resolve(a-b)
+                                break;
+                            case '*':resolve(a*b)
+                                break;
+                            case '/':resolve(a/b)
+                                break;
+                            default:
+                                reject(console.log("invalid operator"));
+                                break;
+                        }
+                    },2000)
+                })
+            }
+            var arr = [];
+            const newfunc= async()=>{
+
+                var res1 = await func('+');
+                document.write(res1+"</br>")
+
+                 res1 = await func('-');
+                 document.write(res1+"</br>")
+                
+                res1 = await func('*');
+                document.write(res1+"</br>")
+                
+                res1 = await func('/');
+                document.write(res1+"</br>")
+                
+            }
+
+            newfunc();
+
+        }
+    </script>
+    
+</body>
+</html>

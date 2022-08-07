@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp1">
+    <br>
+    <button onclick="add()">Add element to set</button>
+    <br>
+    <input type="text" id="srch">
+    <br>
+    <button onclick="srch()">Search in set</button>
+    <br>
+    <input type="text" id="del">
+    <br>
+    <button onclick="del()">Delete from set</button>
+    <br>
+    <div id="ans"></div>
+
+    <script>
+        let x = new Set();
+
+        function add() {
+            x.add(document.getElementById("inp1").value);
+            let s = ""
+
+            x.forEach(function(value) {
+                s += value + "<br>";
+            })
+
+            document.getElementById("ans").innerHTML = s;
+        }
+
+        function srch() {
+            document.getElementById("ans").innerHTML = x.has(document.getElementById("srch").value);
+        }
+
+        function del() {
+            x.delete(document.getElementById("del").value);
+            var s = "";
+
+            x.forEach(function(value) {
+                s += value + "<br>";
+            })
+
+            document.getElementById("ans").innerHTML = s;
+
+        }
+    </script>
+
+</body>
+
+</html>

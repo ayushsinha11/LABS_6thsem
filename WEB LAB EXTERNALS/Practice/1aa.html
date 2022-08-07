@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button onclick="fun()" >Submit</button>
+    <div id="ans" ></div>
+    <script>
+        function fun(){
+            var x=document.getElementById("inp").value;
+            var c=0;
+            for(let i=0;i<x.length;i++){
+                if(x[i]=='a'||x[i]=='e'||x[i]=='i'||x[i]=='o'||x[i]=='u'){
+                    c++;
+                }
+            }
+            document.getElementById("ans").innerHTML=c;
+        }
+    </script>
+</body>
+</html>

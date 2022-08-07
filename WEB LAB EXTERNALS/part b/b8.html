@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter Email: </label>
+    <input type="text" id="inp1">
+    <br>
+    <button onclick="my()">Check</button>
+
+    <script>
+        function my()
+        {
+            let m=document.getElementById("inp1").value;
+            let re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(re.test(m))
+               alert("Valid Email!");
+            else
+               alert("Invalid Email!");
+        }
+    </script>
+</body>
+</html>
